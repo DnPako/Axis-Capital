@@ -1,0 +1,166 @@
+/*
+Colors
+Red : #751215;
+Blue : #0d3153;
+Grey : #444444;
+BlueSky: #86d5f4;
+background: #f1f1f1;
+*/
+
+:root {
+    --redClr: #751215;
+    --blueClr: #0d3153;
+    --whiteClr: #fff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Lato';
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.raleway{
+    font-family: 'Raleway', sans-serif;
+}
+
+/*Header Content*/
+
+header {
+    background-color: var(--whiteClr);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 2px -3px gray;
+}
+
+header>img {
+    flex: 1;
+    margin-left: 2em;
+    width: 20%;
+    height: auto;
+}
+
+nav {
+    flex: 5;
+}
+
+nav>ul {
+    list-style-type: none;
+}
+
+nav>ul li {
+    float: right;
+}
+
+nav>ul li a {
+    display: block;
+    float: left;
+    color: black;
+    text-decoration: none;
+    margin: 1.6em 1.6em 0 1.6em;
+    text-transform: uppercase;
+}
+
+nav>ul li a::after {
+    margin-top: 1.6em;
+    margin-left: -15%;
+    content: '';
+    display: block;
+    width: 0;
+    height: 3.5px;
+    background: var(--redClr);
+    transition: width .3s;
+}
+
+nav>ul li a:hover::after {
+    width: 130%;
+}
+
+/*Slider*/
+.slider{
+    position: relative;
+    z-index: -1;
+    text-align:center;
+}
+
+.slideImgOne{
+    width: 100%;
+    height: 40em;
+    transform: translateY(-6%);
+}
+
+.slider .sliderText{
+    color: var(--whiteClr);
+    position: absolute;
+    top:25%;
+    right:10%;
+    bottom:25%;
+    left:10%;
+}
+
+.sliderText h1{
+    font-size: 60pt;
+}
+
+.sliderText p{
+    font-size: 16pt;
+}
+
+.container{
+    margin: 0 auto;
+    width: 80%;
+    height: auto;
+}
+/*A propos BMCE*/
+.propos{
+    text-align: center;
+}
+
+.propos h1{
+    color: var(--blueClr);
+    font-size: 45pt;
+}
+
+.office{
+    position: relative;
+    height: 30em;
+
+}
+
+.office > img{
+    width: 100%;
+    height: 30em;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+.office > div{
+    position: absolute;
+    left: 55%;
+    right: 5%;
+    top: 15%;
+}
+
+.office > div h3{
+    font-size: 25pt;
+}
+
+.office > div p{
+
+}
+hr{
+    width: 25%;
+    height: 0.4em;
+    border: none;
+    background-color: var(--redClr);
+    margin: 2em auto;
+}

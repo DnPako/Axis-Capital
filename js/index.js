@@ -1,6 +1,7 @@
 // sticky nav functionality
 const nav = document.querySelector('header');
 const topNav = nav.offsetTop;
+const sliderImages = document.querySelectorAll('.slide-in');
 
 function debounce(func, wait = 20, immediate = true) {
     var timeout;
@@ -24,6 +25,14 @@ function fixNav(e) {
     } else {
         document.body.classList.remove('fix-nav');
     }
+    // Slide in animations
+    sliderImages.forEach(image => {
+        const slideInAt = (window.scrollY + window.innerHeight) - image.height/2;
+        const imageBottom = image.offsetTop + image.height;
+        const isHalfShown = slideInAt > image.offsetTop;
+        const notScrolledPassed = window.scrollY < imageBottom;
+        (isHalfShown && notScrolledPassed) ? image.classList.add('active') : image.classList.remove('active')
+    });
 }
 
 // Navigation functionality
@@ -43,6 +52,8 @@ function goToSection() {
          fixNav();
     }
 }
+
+
 
 menuItems.forEach(link => link.addEventListener('click', goToSection));
 document.addEventListener('scroll', debounce(fixNav));

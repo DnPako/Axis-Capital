@@ -11,6 +11,7 @@ background: #f1f1f1;
     --redClr: #751215;
     --blueClr: #0d3153;
     --whiteClr: #fff;
+    --greyClr: #444;
 }
 
 * {
@@ -118,12 +119,13 @@ nav>ul li a:hover::after {
     width: 80%;
     height: auto;
 }
-/*A propos BMCE*/
-.propos{
+/*A block BMCE*/
+.block{
     text-align: center;
+    margin-bottom: 3em;
 }
 
-.propos h1{
+.block h1{
     color: var(--blueClr);
     font-size: 45pt;
 }
@@ -131,7 +133,6 @@ nav>ul li a:hover::after {
 .office{
     position: relative;
     height: 30em;
-
 }
 
 .office > img{
@@ -147,7 +148,8 @@ nav>ul li a:hover::after {
     position: absolute;
     left: 55%;
     right: 5%;
-    top: 15%;
+    top: 25%;
+    color: var(--greyClr);
 }
 
 .office > div h3{
@@ -155,8 +157,54 @@ nav>ul li a:hover::after {
 }
 
 .office > div p{
+    margin: 1em;
+}
+
+.row{
+    display: flex;
+    width: 100%;
+}
+
+.square{
+    height: 50%;
+    flex: 1;
+}
+
+.square img, .content{
+    width: 100%;
+    height: 100%;
+}
+
+.left{
+    text-align: left;
+    padding: 0 2em 0 2em;
+}
+
+.right{
+    text-align: right;
+    padding: 0 2em 0 2em;
+}
+
+.content{
+    width: auto;
 
 }
+
+.content *{
+    margin-bottom: 0.5em;
+}
+
+.content h4{
+    color: var(--greyClr);
+    font-size: 20pt;
+}
+
+.number{
+    color: var(--redClr);
+    font-size: 20pt;
+    margin-top: 0.3em;
+}
+
 hr{
     width: 25%;
     height: 0.4em;

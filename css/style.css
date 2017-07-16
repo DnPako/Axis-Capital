@@ -1,15 +1,7 @@
-/*
-Colors
-Red : #751215;
-Blue : #0d3153;
-Grey : #444444;
-BlueSky: #86d5f4;
-background: #f1f1f1;
-*/
-
 :root {
     --redClr: #751215;
     --blueClr: #0d3153;
+    --skyClr: #86d5f4;
     --whiteClr: #fff;
     --greyClr: #444;
     --bgClr: #f1f1f1;
@@ -30,6 +22,12 @@ body {
 
 .raleway{
     font-family: 'Raleway', sans-serif;
+}
+
+.fix-nav header{
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
 }
 
 /*Header Content*/
@@ -290,12 +288,6 @@ hr{
     width: 6em;
     height: 6em;
     margin: 1em;
-    transform: scale(1) rotate(0);
-    transition: 0.2s all linear;
-}
-
-.square .contactImg:hover{
-    transform: scale(1.3) rotate(-20deg);
 }
 
 .mapContainer{
@@ -327,6 +319,11 @@ hr{
     color: var(--whiteClr);
     background-color: var(--blueClr);
     display: flex;
+}
+
+span{
+    color: var(--skyClr);
+    font-weight: 600;
 }
 
 .verticalHr{

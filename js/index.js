@@ -1,4 +1,4 @@
-// Fix nav fonctionality
+// sticky nav functionality
 const nav = document.querySelector('header');
 const topNav = nav.offsetTop;
 
@@ -26,4 +26,23 @@ function fixNav(e) {
     }
 }
 
+// Navigation functionality
+const menuItems = document.querySelectorAll('.menu li a');
+const pubBlock = document.querySelector('#pub');
+const entityBlock = document.querySelector('#entity');
+
+
+function goToSection() {
+    window.scrollTo(0,'2000')
+    const id = this.name;
+    if(id === 'home'){
+        setTimeout(function() {window.scrollTo(0,0)},1)
+    }else{
+         const element = document.querySelector(`#${id}`);
+         setTimeout(function() {window.scrollTo(0,element.offsetTop)},1);
+         fixNav();
+    }
+}
+
+menuItems.forEach(link => link.addEventListener('click', goToSection));
 document.addEventListener('scroll', debounce(fixNav));

@@ -3,6 +3,7 @@ const nav = document.querySelector('header');
 const topNav = nav.offsetTop;
 const sliderImages = document.querySelectorAll('.slide-in');
 
+// Debounce for scroll redundancy
 function debounce(func, wait = 20, immediate = true) {
     var timeout;
     return function() {
@@ -40,20 +41,19 @@ const menuItems = document.querySelectorAll('.menu li a');
 const pubBlock = document.querySelector('#pub');
 const entityBlock = document.querySelector('#entity');
 
-
 function goToSection() {
-    window.scrollTo(0,'2000')
     const id = this.name;
     if(id === 'home'){
         setTimeout(function() {window.scrollTo(0,0)},1)
     }else{
          const element = document.querySelector(`#${id}`);
-         setTimeout(function() {window.scrollTo(0,element.offsetTop)},1);
-         fixNav();
+         setTimeout(function() {
+             window.scrollTo(0,element.offsetTop);
+             document.body.classList.add('fix-nav');
+         },1);
+
     }
 }
-
-
 
 menuItems.forEach(link => link.addEventListener('click', goToSection));
 document.addEventListener('scroll', debounce(fixNav));
